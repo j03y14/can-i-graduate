@@ -1,7 +1,7 @@
 <?php
-	session_start();
+
 	if(array_key_exists('user_id', $_SESSION)) Header("Location:/?act=dashboard");
-	if($_POST['password'] != ''){
+	if(isset($_POST['password'])){
 		$encryped_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 		$conn = mysqli_connect('127.0.0.1','cig_admin','1','can_i_graduate');
@@ -101,6 +101,7 @@
           </select>
         </div>
         <button type="submit" name="submit" class="btn btn-primary">확인</button>
+				<button name="cancel" class="btn btn-primary" onclick="location.href='/?act=login'">취소</button>
       </form>
     </div>
  </body>

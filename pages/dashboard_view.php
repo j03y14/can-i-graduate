@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>"n"
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
   <!--부트스트랩-->
@@ -109,6 +109,9 @@
       height:700px;
       width:120%;
     }
+    .greeting{
+      margin-left: auto;
+    }
     @media screen and (max-width:760px) {
       #table-row{
         top: auto;
@@ -124,10 +127,21 @@
   </style>
 </head>
 <body>
-  <div class="navbar bg-light">
+  <div class="navbar navbar-expand-sm bg-light">
     <!--로고-->
     <a href="#" class="navbar-brand">Can I graduate</a>
     <!--~님 안녕하세요-->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/?act=detailPage">세부 정보 페이지</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/?act=logOut">로그아웃</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/?act=reLog">회원정보 수정</a>
+      </li>
+    </ul>
     <div class="greeting">                             <!--php로 구현해야 할 것들: 사용자의 이름(name)-->
       <?php echo $_SESSION['nickname']; ?>님 안녕하세요
     </div>

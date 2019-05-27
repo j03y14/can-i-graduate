@@ -1,5 +1,5 @@
 <?php
-	session_start();
+
 	if(! array_key_exists('user_id', $_SESSION)) Header("Location:/?act=loign");
 
 	$conn = mysqli_connect('127.0.0.1','cig_admin','1','can_i_graduate');
@@ -39,7 +39,7 @@
 	else{
 
 		// 성적 올리기
-
+/*
 
 
 		$target_dir = "/workspace/PHP/";
@@ -66,17 +66,13 @@
 				}
 			}
 		}
-
+*/
 		// detailPage로 넘어가기
 
-print <<<_HTML_
-	<form method="post" action="/?act=detailPage">
-		<button type="submit">세부 조회</button>
-	</form>
-_HTML_;
+
 
 		// 보관 성적 자동 '갱신'하기, 종합지표 계산하기
-
+/*
 		$row = 1;
 		if (($handle = fopen($target_file, "r")) !== FALSE) {
   			while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
@@ -89,24 +85,14 @@ _HTML_;
   			}
   			fclose($handle);
 		}
-
+*/
 		// 회원 정보 수정, 회원 탈퇴(쿠키 처리)
 
-print <<<_HTML_
-	<form method="post" action="/?act=reLog">
-		<button type="submit">회원 정보 수정</button>
-	</form>
-_HTML_;
 
 		require 'dashboard_view.php';
 	}
 
-	// logOut 하기
-print <<<_HTML_
-	<form method="post" action="/?act=logOut">
-		<button type="submit">나가기</button>
-	</form>
-_HTML_;
+
 
 	mysqli_close($conn);
 ?>
