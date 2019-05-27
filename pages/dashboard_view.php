@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head>"n"
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
   <!--부트스트랩-->
@@ -57,7 +57,7 @@
                      'width': 450,
                      'height': 450,
                      'chartArea': {'width': '100%', 'height': '80%'},
-                     'pieHole':0.4, 
+                     'pieHole':0.4,
                      'pieStartAngle': 270,
                      'slices':{
                        '2':{
@@ -84,7 +84,7 @@
                      'width': 450,
                      'height': 450,
                      'chartArea': {'width': '100%', 'height': '80%'},
-                     'pieHole':0.4, 
+                     'pieHole':0.4,
                      'pieStartAngle': 270,
                      'slices':{
                        '2':{
@@ -129,7 +129,7 @@
     <a href="#" class="navbar-brand">Can I graduate</a>
     <!--~님 안녕하세요-->
     <div class="greeting">                             <!--php로 구현해야 할 것들: 사용자의 이름(name)-->
-      (php변수)님 안녕하세요                                                    
+      (php변수)님 안녕하세요
     </div>
   </div>
   <div class="container">
