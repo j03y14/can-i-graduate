@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @brief Declare constants for generic use and for checking to avoid a direct call from the Web
@@ -8,7 +7,12 @@ define('__CIG__',   true);
  * @brief Include basic configuration file
  **/
 require dirname(__FILE__) . "/config/config.inc.php";
-
+require dirname(__FILE__) . "/classes/context/Context.class.php";
+require dirname(__FILE__) . "/classes/data/Data.class.php";
+require dirname(__FILE__) . "/classes/db/DB.class.php";
+require dirname(__FILE__) . "/classes/file/File.class.php";
+require dirname(__FILE__) . "/classes/user/User.class.php";
+require dirname(__FILE__) . "/classes/view/View.class.php";
 // view 분리 (DB외 class model 분리는 추후 진행)
 
 // 전공 목록을 DB에 미리 저장된 것들을 받아오도록 수정하기
@@ -19,18 +23,15 @@ require dirname(__FILE__) . "/config/config.inc.php";
 // '<meta charset="utf-8">' 사용하기?
 // $_SESSION의 다른 용도?
 
+/*
 session_start();
 
 if (array_key_exists("user_id", $_SESSION))
     Header("Location:./pages/dashboard.php");
 else
     Header("Location:./pages/login.php");
-
+*/
+Context::parseUrl();
+View::display();
 /* End of file index.php */
-/* Location: ./index.php *
-
-
-<?php
-include "login.php";
- ?>
-
+/* Location: ./index.php */
