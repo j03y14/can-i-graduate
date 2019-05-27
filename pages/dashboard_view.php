@@ -129,7 +129,7 @@
     <a href="#" class="navbar-brand">Can I graduate</a>
     <!--~님 안녕하세요-->
     <div class="greeting">                             <!--php로 구현해야 할 것들: 사용자의 이름(name)-->
-      (php변수)님 안녕하세요
+      <?php echo $_SESSION['nickname']; ?>님 안녕하세요
     </div>
   </div>
   <div class="container">
