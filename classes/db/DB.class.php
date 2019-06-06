@@ -4,5 +4,44 @@
  */
 class DB
 {
-    static public $db = NULL;
+    //db 정보
+    public static $DBInfo = NULL;
+    protected static $DBFilename = 'config/db.config.php';
+    //db 연결 변수
+    protected static $conn;
+
+    public static function init()
+    {
+      // Load DB configuration.
+      self::loadDBInfo();
+      // Connect DB.
+      self::connectDB();
+    }
+
+    public static function loadDBInfo()
+    {
+        /**
+         * @brief Include basic configuration file
+        **/
+        if (file_exists(CIG_BASEDIR . self::$DBFilename))
+        {
+            ob_start();
+            self::$DBInfo = require CIG_BASEDIR . self::$DBFilename;
+            ob_end_clean();
+        }
+    }
+
+    public static function connectDB()
+    {
+      //후에 context 안에 들어가 있는 정보로 대체
+      self::$conn = new mysqli(self::$DBInfo['db_hostname'],self::$DBInfo['db_userid'],self::$DBInfo['db_password'],self::$DBInfo['db_database']);
+      if(self::$conn->connect_error){
+        die("Connection failed: " . $conn->connect_error);
+      }
+    }
+
+    public static function getConn()
+    {
+      return self::$conn;
+    }
 }
